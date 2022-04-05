@@ -13103,7 +13103,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#import modules</span>
@@ -13140,7 +13140,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">eco_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:[],</span> <span class="s1">&#39;count&#39;</span><span class="p">:[]}</span> <span class="c1">#create an empty dictionary</span>
@@ -13172,7 +13172,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13236,7 +13236,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#reorganize df and explode lists</span>
@@ -13267,7 +13267,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13359,7 +13359,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#add a new column that sums all the pixels in the row</span>
@@ -13389,7 +13389,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13474,22 +13474,22 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Calculate %difference in ecoregion cover between each pair of scenarios</p>
+<p>Calculate %change in ecoregion cover between each pair of scenarios</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">pixel_count2</span> <span class="o">=</span> <span class="n">pixel_count2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">17</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#remove % math from previous chunk</span>
 
-<span class="c1">#%diff math on rows</span>
-<span class="n">change_h370</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">-</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span><span class="o">/</span><span class="p">((</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">+</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#%diff between historical and ssp370</span>
-<span class="n">change_h585</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">-</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span><span class="o">/</span><span class="p">((</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">+</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#%diff between historical and ssp585</span>
-<span class="n">change_370_585</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">-</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span><span class="o">/</span><span class="p">((</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">+</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#%diff between ssp370 and ssp585 </span>
+<span class="c1">#%change math on rows</span>
+<span class="n">change_h370</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">-</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span><span class="o">/</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#%chng between historical and ssp370</span>
+<span class="n">change_h585</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">-</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span><span class="o">/</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#%chng between historical and ssp585</span>
+<span class="n">change_370_585</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span><span class="o">-</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span><span class="o">/</span><span class="n">pixel_count2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#%chng between ssp370 and ssp585 </span>
 
 <span class="c1">#add outputs to eco_change df</span>
 <span class="n">eco_change</span> <span class="o">=</span> <span class="n">pixel_count2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">change_h370</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#add h-370 row to eco% as new df eco_change</span>
@@ -13514,7 +13514,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13552,38 +13552,38 @@ div#notebook {
     <tr>
       <th>3</th>
       <td>chng_h370</td>
-      <td>-39.942883</td>
-      <td>-83.242683</td>
-      <td>-38.485607</td>
-      <td>-66.764400</td>
-      <td>57.878384</td>
-      <td>117.806138</td>
-      <td>-194.274858</td>
-      <td>-181.989708</td>
+      <td>-33.293659</td>
+      <td>-58.778347</td>
+      <td>-32.274993</td>
+      <td>-50.054955</td>
+      <td>81.449094</td>
+      <td>286.654344</td>
+      <td>-98.547931</td>
+      <td>-95.285137</td>
     </tr>
     <tr>
       <th>4</th>
       <td>chng_h585</td>
-      <td>-35.885656</td>
-      <td>-114.072372</td>
-      <td>-38.485607</td>
-      <td>-71.372646</td>
-      <td>44.864341</td>
-      <td>127.098774</td>
-      <td>-198.259980</td>
-      <td>-194.159292</td>
+      <td>-30.426315</td>
+      <td>-72.640819</td>
+      <td>-32.274993</td>
+      <td>-52.601209</td>
+      <td>57.838851</td>
+      <td>348.687616</td>
+      <td>-99.563094</td>
+      <td>-98.518186</td>
     </tr>
     <tr>
       <th>5</th>
       <td>chng_370_585</td>
-      <td>4.208019</td>
-      <td>-40.426667</td>
+      <td>4.298459</td>
+      <td>-33.629104</td>
       <td>0.000000</td>
-      <td>-5.231464</td>
-      <td>-13.917526</td>
-      <td>14.852186</td>
-      <td>-107.482993</td>
-      <td>-104.347826</td>
+      <td>-5.098111</td>
+      <td>-13.012048</td>
+      <td>16.043599</td>
+      <td>-69.911504</td>
+      <td>-68.571429</td>
     </tr>
   </tbody>
 </table>
@@ -15586,14 +15586,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Calculate %diff between each pair of scenarios in each protected area</p>
+<p>Calculate %change between each pair of scenarios in each protected area</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;D:/masters_project/analysis/output_tables/pa_pixel_counts.csv&#39;</span><span class="p">)</span> <span class="c1">#call pixel count csv from before</span>
@@ -15618,7 +15618,7 @@ div#notebook {
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span> <span class="c1">#loop for columns 0-17 (hist)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">rowID</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1">#set column name as rowID</span>
     <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">18</span> <span class="c1">#ssp370 is 18 rows beyond historical</span>
-    <span class="n">count</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="p">((</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#append new column calculating %chng</span>
+    <span class="n">count</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#append new column calculating %chng</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="c1">#add 1 to i value</span>
 
 <span class="c1">#calculate %change between historical and ssp585 scenarios</span>
@@ -15626,14 +15626,14 @@ div#notebook {
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span> <span class="c1">#loop for columns 0-17 (hist)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">rowID</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">18</span><span class="p">]</span> <span class="c1">#set column name as rowID</span>
     <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">36</span> <span class="c1">#ssp585 is 36 rows beyond historical</span>
-    <span class="n">count</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="p">((</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#append new column calculating %chng</span>
+    <span class="n">count</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#append new column calculating %chng</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="c1">#add 1 to i value</span>
 
 <span class="c1">#calculate %change between ssp370 and ssp585 scenarios</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">36</span><span class="p">:</span> <span class="c1">#loop for columns 18-35 (ssp370)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">rowID</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">18</span><span class="p">]</span> <span class="c1">#set column name as rowID</span>
     <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">18</span> <span class="c1">#ssp585 is 18 rows beyond ssp370</span>
-    <span class="n">count</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="p">((</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#append new column calculating %chng</span>
+    <span class="n">count</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="n">count</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span> <span class="c1">#append new column calculating %chng</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="c1">#add 1 to i value</span>
 
 <span class="n">pa_eco_change</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">count</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">54</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#drop count columns</span>
@@ -15655,7 +15655,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -15691,22 +15691,22 @@ div#notebook {
   <tbody>
     <tr>
       <th>chng_h370_All_PA</th>
-      <td>3103.004545</td>
-      <td>864.317982</td>
-      <td>677.394213</td>
-      <td>850.652794</td>
-      <td>212.805310</td>
-      <td>1212.107534</td>
-      <td>-200.0</td>
-      <td>-200.0</td>
+      <td>-24.554409</td>
+      <td>-61.765820</td>
+      <td>-10.616438</td>
+      <td>26.379542</td>
+      <td>3028.571429</td>
+      <td>314.238411</td>
+      <td>-100.0</td>
+      <td>-100.0</td>
     </tr>
     <tr>
       <th>chng_h370_Barsey_RS</th>
-      <td>-200.000000</td>
+      <td>-100.000000</td>
       <td>0.000000</td>
-      <td>-170.034483</td>
-      <td>54.895105</td>
-      <td>15.000000</td>
+      <td>-89.523810</td>
+      <td>10.294118</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15716,11 +15716,11 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-195.428571</td>
+      <td>-98.181818</td>
       <td>0.000000</td>
-      <td>928.275892</td>
-      <td>-200.0</td>
-      <td>-200.0</td>
+      <td>411.170213</td>
+      <td>-100.0</td>
+      <td>-100.0</td>
     </tr>
     <tr>
       <th>chng_h370_Chapramari_WS</th>
@@ -15729,8 +15729,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>14.000000</td>
-      <td>-200.0</td>
+      <td>inf</td>
+      <td>-100.0</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -15738,8 +15738,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-179.666667</td>
-      <td>64.000000</td>
+      <td>-92.857143</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15750,18 +15750,18 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>25.000000</td>
-      <td>81.000000</td>
-      <td>-200.0</td>
+      <td>inf</td>
+      <td>inf</td>
+      <td>-100.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h370_Jigme_Khesar_SNR</th>
-      <td>320.840000</td>
-      <td>-200.000000</td>
-      <td>88.815951</td>
-      <td>109.772152</td>
-      <td>10.000000</td>
+      <td>-43.945069</td>
+      <td>-100.000000</td>
+      <td>21.768707</td>
+      <td>143.478261</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15771,7 +15771,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-132.333333</td>
+      <td>-50.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -15779,22 +15779,22 @@ div#notebook {
     </tr>
     <tr>
       <th>chng_h370_Kanchenjunga_CA</th>
-      <td>1263.803279</td>
-      <td>312.041298</td>
-      <td>176.340426</td>
-      <td>75.027491</td>
-      <td>51.000000</td>
+      <td>-15.151515</td>
+      <td>-62.974939</td>
+      <td>28.155340</td>
+      <td>27.343750</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h370_Khangchendzonga_BR</th>
-      <td>1134.600983</td>
-      <td>434.837308</td>
-      <td>152.270142</td>
-      <td>171.231884</td>
-      <td>22.333333</td>
+      <td>-22.062500</td>
+      <td>-56.283321</td>
+      <td>30.601093</td>
+      <td>113.636364</td>
+      <td>2800.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15805,17 +15805,17 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-104.090909</td>
+      <td>-16.666667</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h370_Kyongnosla_AS</th>
-      <td>-101.818182</td>
+      <td>-48.275862</td>
       <td>0.000000</td>
-      <td>7.000000</td>
-      <td>3.000000</td>
+      <td>inf</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -15827,17 +15827,17 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>5.000000</td>
-      <td>119.974026</td>
-      <td>-200.0</td>
+      <td>inf</td>
+      <td>70.175439</td>
+      <td>-100.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h370_Mainam_WS</th>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-200.000000</td>
-      <td>-13.454545</td>
+      <td>-100.000000</td>
+      <td>83.870968</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -15845,11 +15845,11 @@ div#notebook {
     </tr>
     <tr>
       <th>chng_h370_Pangolakha_WS</th>
-      <td>-59.100478</td>
+      <td>-47.445255</td>
       <td>0.000000</td>
-      <td>-105.082474</td>
-      <td>-5.728395</td>
-      <td>6.000000</td>
+      <td>-53.030303</td>
+      <td>124.000000</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15859,28 +15859,28 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-74.008403</td>
-      <td>2.000000</td>
-      <td>1.000000</td>
+      <td>-34.722222</td>
+      <td>inf</td>
+      <td>inf</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h370_Singhalila_NP</th>
-      <td>-200.000000</td>
+      <td>-100.000000</td>
       <td>0.000000</td>
-      <td>-100.783133</td>
-      <td>1.000000</td>
-      <td>7.000000</td>
+      <td>-62.809917</td>
+      <td>200.000000</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h370_Singhba_RS</th>
-      <td>-50.803738</td>
-      <td>-200.000000</td>
-      <td>-178.106383</td>
+      <td>-5.454545</td>
+      <td>-100.000000</td>
+      <td>-91.954023</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -15889,23 +15889,23 @@ div#notebook {
     </tr>
     <tr>
       <th>chng_h585_All_PA</th>
-      <td>3319.160385</td>
-      <td>403.422513</td>
-      <td>826.666667</td>
-      <td>858.018946</td>
-      <td>446.936543</td>
-      <td>1056.918688</td>
-      <td>-200.0</td>
-      <td>-200.0</td>
+      <td>-19.559099</td>
+      <td>-78.476696</td>
+      <td>5.479452</td>
+      <td>27.321669</td>
+      <td>6328.571429</td>
+      <td>264.238411</td>
+      <td>-100.0</td>
+      <td>-100.0</td>
     </tr>
     <tr>
       <th>chng_h585_Barsey_RS</th>
-      <td>-200.000000</td>
+      <td>-100.000000</td>
       <td>0.000000</td>
-      <td>-157.553719</td>
-      <td>56.226481</td>
-      <td>3.000000</td>
-      <td>6.000000</td>
+      <td>-84.761905</td>
+      <td>11.029412</td>
+      <td>inf</td>
+      <td>inf</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -15914,11 +15914,11 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-135.777778</td>
-      <td>178.000000</td>
-      <td>727.628272</td>
-      <td>-200.0</td>
-      <td>-200.0</td>
+      <td>-69.090909</td>
+      <td>inf</td>
+      <td>307.978723</td>
+      <td>-100.0</td>
+      <td>-100.0</td>
     </tr>
     <tr>
       <th>chng_h585_Chapramari_WS</th>
@@ -15927,8 +15927,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>14.000000</td>
-      <td>-200.0</td>
+      <td>inf</td>
+      <td>-100.0</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -15936,8 +15936,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-200.000000</td>
-      <td>71.000000</td>
+      <td>-100.000000</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15948,18 +15948,18 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>3.000000</td>
-      <td>103.000000</td>
-      <td>-200.0</td>
+      <td>inf</td>
+      <td>inf</td>
+      <td>-100.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h585_Jigme_Khesar_SNR</th>
-      <td>247.695946</td>
-      <td>-200.000000</td>
-      <td>153.222222</td>
-      <td>125.800000</td>
-      <td>11.000000</td>
+      <td>-52.184769</td>
+      <td>-100.000000</td>
+      <td>57.142857</td>
+      <td>162.318841</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15969,7 +15969,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-132.333333</td>
+      <td>-50.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -15977,22 +15977,22 @@ div#notebook {
     </tr>
     <tr>
       <th>chng_h585_Kanchenjunga_CA</th>
-      <td>1423.104677</td>
-      <td>40.143646</td>
-      <td>243.969697</td>
-      <td>105.730159</td>
-      <td>62.000000</td>
+      <td>-5.627706</td>
+      <td>-82.942603</td>
+      <td>56.310680</td>
+      <td>46.093750</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h585_Khangchendzonga_BR</th>
-      <td>1278.833222</td>
-      <td>222.707274</td>
-      <td>172.628702</td>
-      <td>137.599369</td>
-      <td>94.959184</td>
+      <td>-13.375000</td>
+      <td>-71.210967</td>
+      <td>39.890710</td>
+      <td>88.181818</td>
+      <td>9600.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16003,16 +16003,16 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-104.090909</td>
+      <td>-16.666667</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h585_Kyongnosla_AS</th>
-      <td>-112.095238</td>
+      <td>-55.172414</td>
       <td>0.000000</td>
-      <td>14.000000</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -16026,29 +16026,29 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>126.156550</td>
-      <td>-200.0</td>
+      <td>74.561404</td>
+      <td>-100.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h585_Mainam_WS</th>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-200.000000</td>
-      <td>-47.323944</td>
-      <td>17.000000</td>
+      <td>-100.000000</td>
+      <td>29.032258</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h585_Pangolakha_WS</th>
-      <td>-67.313725</td>
+      <td>-51.094891</td>
       <td>0.000000</td>
-      <td>-107.500000</td>
-      <td>11.054945</td>
+      <td>-54.545455</td>
+      <td>164.000000</td>
       <td>0.000000</td>
-      <td>2.000000</td>
+      <td>inf</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16057,18 +16057,18 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-90.729730</td>
-      <td>2.000000</td>
-      <td>9.000000</td>
+      <td>-45.833333</td>
+      <td>inf</td>
+      <td>inf</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_h585_Singhalila_NP</th>
-      <td>-200.000000</td>
+      <td>-100.000000</td>
       <td>0.000000</td>
-      <td>-98.910180</td>
-      <td>11.054054</td>
+      <td>-61.983471</td>
+      <td>235.294118</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -16076,23 +16076,23 @@ div#notebook {
     </tr>
     <tr>
       <th>chng_h585_Singhba_RS</th>
-      <td>-56.769231</td>
-      <td>-200.000000</td>
-      <td>-172.250000</td>
+      <td>-10.909091</td>
+      <td>-100.000000</td>
+      <td>-89.655172</td>
       <td>0.000000</td>
-      <td>1.000000</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_370_585_All_PA</th>
-      <td>3333.204453</td>
-      <td>440.035510</td>
-      <td>832.260105</td>
-      <td>846.371353</td>
-      <td>384.529148</td>
-      <td>993.577201</td>
+      <td>6.621076</td>
+      <td>-43.706640</td>
+      <td>18.007663</td>
+      <td>0.745474</td>
+      <td>105.479452</td>
+      <td>-12.070344</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16100,10 +16100,10 @@ div#notebook {
       <th>chng_370_585_Barsey_RS</th>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-65.481481</td>
-      <td>51.332226</td>
-      <td>-163.666667</td>
-      <td>6.000000</td>
+      <td>45.454545</td>
+      <td>0.666667</td>
+      <td>-80.000000</td>
+      <td>inf</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16112,9 +16112,9 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>5.888889</td>
-      <td>178.000000</td>
-      <td>655.773148</td>
+      <td>1600.000000</td>
+      <td>inf</td>
+      <td>-20.187305</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16125,7 +16125,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-86.000000</td>
+      <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16134,8 +16134,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-200.000000</td>
-      <td>-23.814815</td>
+      <td>-100.000000</td>
+      <td>10.937500</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16146,18 +16146,18 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-175.571429</td>
-      <td>14.956522</td>
+      <td>-88.000000</td>
+      <td>27.160494</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_370_585_Jigme_Khesar_SNR</th>
-      <td>275.067308</td>
+      <td>-14.699332</td>
       <td>0.000000</td>
-      <td>143.682927</td>
-      <td>84.724928</td>
-      <td>-84.238095</td>
+      <td>29.050279</td>
+      <td>7.738095</td>
+      <td>10.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16167,7 +16167,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-99.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -16175,22 +16175,22 @@ div#notebook {
     </tr>
     <tr>
       <th>chng_370_585_Kanchenjunga_CA</th>
-      <td>1431.314010</td>
-      <td>74.079223</td>
-      <td>231.897611</td>
-      <td>93.857143</td>
-      <td>-28.265487</td>
+      <td>11.224490</td>
+      <td>-53.930131</td>
+      <td>21.969697</td>
+      <td>14.723926</td>
+      <td>21.568627</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_370_585_Khangchendzonga_BR</th>
-      <td>1291.279149</td>
-      <td>257.411765</td>
-      <td>159.434343</td>
-      <td>100.665158</td>
-      <td>50.968254</td>
+      <td>11.146752</td>
+      <td>-34.146341</td>
+      <td>7.112971</td>
+      <td>-11.914894</td>
+      <td>234.482759</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16201,17 +16201,17 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-95.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_370_585_Kyongnosla_AS</th>
-      <td>-81.142857</td>
+      <td>-13.333333</td>
       <td>0.000000</td>
-      <td>-52.666667</td>
-      <td>-200.000000</td>
+      <td>100.000000</td>
+      <td>-100.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -16223,8 +16223,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-200.000000</td>
-      <td>100.272265</td>
+      <td>-100.000000</td>
+      <td>2.577320</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16233,20 +16233,20 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-77.525773</td>
-      <td>17.000000</td>
+      <td>-29.824561</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_370_585_Pangolakha_WS</th>
-      <td>-36.597122</td>
+      <td>-6.944444</td>
       <td>0.000000</td>
-      <td>-71.639344</td>
-      <td>-25.803279</td>
-      <td>-200.000000</td>
-      <td>2.000000</td>
+      <td>-3.225806</td>
+      <td>17.857143</td>
+      <td>-100.000000</td>
+      <td>inf</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16255,9 +16255,9 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-70.302326</td>
-      <td>-98.000000</td>
-      <td>-11.000000</td>
+      <td>-17.021277</td>
+      <td>0.000000</td>
+      <td>800.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16265,20 +16265,20 @@ div#notebook {
       <th>chng_370_585_Singhalila_NP</th>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>-52.901099</td>
-      <td>-37.444444</td>
-      <td>-200.000000</td>
+      <td>2.222222</td>
+      <td>11.764706</td>
+      <td>-100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>chng_370_585_Singhba_RS</th>
-      <td>-53.970297</td>
+      <td>-5.769231</td>
       <td>0.000000</td>
-      <td>-78.500000</td>
+      <td>28.571429</td>
       <td>0.000000</td>
-      <td>1.000000</td>
+      <td>inf</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>

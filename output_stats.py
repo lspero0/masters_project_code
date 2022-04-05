@@ -62,10 +62,10 @@ eco_percent #check if it looks right
 
 pixel_count2 = pixel_count2.drop(pixel_count2.columns[8:17], axis=1) #remove % math from previous chunk
 
-#%diff math on rows
-change_h370 = (pixel_count2.loc[1,:]-pixel_count2.loc[0,:])/((pixel_count2.loc[1,:]+pixel_count2.loc[0,:])/2)*100 #%diff between historical and ssp370
-change_h585 = (pixel_count2.loc[2,:]-pixel_count2.loc[0,:])/((pixel_count2.loc[2,:]+pixel_count2.loc[0,:])/2)*100 #%diff between historical and ssp585
-change_370_585 = (pixel_count2.loc[2,:]-pixel_count2.loc[1,:])/((pixel_count2.loc[2,:]+pixel_count2.loc[1,:])/2)*100 #%diff between ssp370 and ssp585 
+#%change math on rows
+change_h370 = (pixel_count2.loc[1,:]-pixel_count2.loc[0,:])/pixel_count2.loc[0,:]*100 #%chng between historical and ssp370
+change_h585 = (pixel_count2.loc[2,:]-pixel_count2.loc[0,:])/pixel_count2.loc[0,:]*100 #%chng between historical and ssp585
+change_370_585 = (pixel_count2.loc[2,:]-pixel_count2.loc[1,:])/pixel_count2.loc[1,:]*100 #%chng between ssp370 and ssp585 
 
 #add outputs to eco_change df
 eco_change = pixel_count2.append(change_h370, ignore_index=True) #add h-370 row to eco% as new df eco_change
@@ -219,7 +219,7 @@ i = 0
 while i < 18: #loop for columns 0-17 (hist)
     name = rowID[i] #set column name as rowID
     j = i+18 #ssp370 is 18 rows beyond historical
-    count[name] = count.iloc[:, j]-count.iloc[:, i]/((count.iloc[:, i]+count.iloc[:, j])/2)*100 #append new column calculating %chng
+    count[name] = (count.iloc[:, j]-count.iloc[:, i])/count.iloc[:, i]*100 #append new column calculating %chng
     i = i+1 #add 1 to i value
 
 #calculate %change between historical and ssp585 scenarios
@@ -227,14 +227,14 @@ i = 0
 while i < 18: #loop for columns 0-17 (hist)
     name = rowID[i+18] #set column name as rowID
     j = i+36 #ssp585 is 36 rows beyond historical
-    count[name] = count.iloc[:, j]-count.iloc[:, i]/((count.iloc[:, i]+count.iloc[:, j])/2)*100 #append new column calculating %chng
+    count[name] = (count.iloc[:, j]-count.iloc[:, i])/count.iloc[:, i]*100 #append new column calculating %chng
     i = i+1 #add 1 to i value
 
 #calculate %change between ssp370 and ssp585 scenarios
 while i < 36: #loop for columns 18-35 (ssp370)
     name = rowID[i+18] #set column name as rowID
     j = i+18 #ssp585 is 18 rows beyond ssp370
-    count[name] = count.iloc[:, j]-count.iloc[:, i]/((count.iloc[:, i]+count.iloc[:, j])/2)*100 #append new column calculating %chng
+    count[name] = (count.iloc[:, j]-count.iloc[:, i])/count.iloc[:, i]*100 #append new column calculating %chng
     i = i+1 #add 1 to i value
 
 pa_eco_change = count.drop(count.columns[0:54], axis=1) #drop count columns
