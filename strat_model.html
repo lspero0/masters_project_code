@@ -13386,7 +13386,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Normalize the four climatic variables to a scale of 0-100</p>
+<p>Normalize the four climatic variables to a scale of 0-100. When normalizing projected climatic variables, define the raster from which the max and min are sourced from as the HISTORICAL climatic variable to scale it</p>
 
 </div>
 </div>
@@ -13399,7 +13399,7 @@ div#notebook {
 <div class=" highlight hl-python"><pre><span></span><span class="n">climvar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ai.tif&#39;</span><span class="p">,</span> <span class="s1">&#39;degdays.tif&#39;</span><span class="p">,</span> <span class="s1">&#39;PETseason.tif&#39;</span><span class="p">,</span> <span class="s1">&#39;tseason.tif&#39;</span><span class="p">]</span> <span class="c1">#list the 4 climatic variables</span>
 
 <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">climvar</span><span class="p">:</span>
-    <span class="n">raster</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">Raster</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="c1">#set climatic variable as raster</span>
+    <span class="n">raster</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">Raster</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="c1">#set climatic variable as raster. When normalizing projected data, set this raster as the HISTORICAL climatic variable</span>
     <span class="n">rmax</span> <span class="o">=</span> <span class="n">raster</span><span class="o">.</span><span class="n">maximum</span> <span class="c1">#maximum of the climatic variable</span>
     <span class="n">rmin</span> <span class="o">=</span> <span class="n">raster</span><span class="o">.</span><span class="n">minimum</span> <span class="c1">#minimum of the climatic variable</span>
     <span class="k">if</span> <span class="n">rmin</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>

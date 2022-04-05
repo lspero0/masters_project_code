@@ -114,7 +114,7 @@ arcpy.env.overwriteOutput = True
 climvar = ['ai.tif', 'degdays.tif', 'PETseason.tif', 'tseason.tif'] #list the 4 climatic variables
 
 for var in climvar:
-    raster = arcpy.Raster(var) #set climatic variable as raster
+    raster = arcpy.Raster(var) #set climatic variable as raster. When normalizing projected data, set this raster as the HISTORICAL climatic variable
     rmax = raster.maximum #maximum of the climatic variable
     rmin = raster.minimum #minimum of the climatic variable
     if rmin > 0:
