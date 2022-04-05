@@ -13613,7 +13613,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#import modules</span>
@@ -15593,7 +15593,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;D:/masters_project/analysis/output_tables/pa_pixel_counts.csv&#39;</span><span class="p">)</span> <span class="c1">#call pixel count csv from before</span>
@@ -15638,6 +15638,7 @@ div#notebook {
 
 <span class="n">pa_eco_change</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">count</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">54</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#drop count columns</span>
 <span class="n">pa_eco_change</span> <span class="o">=</span> <span class="n">pa_eco_change</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span> <span class="c1">#replace NaN from div by 0 errors with 0</span>
+<span class="n">pa_eco_change</span> <span class="o">=</span> <span class="n">pa_eco_change</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">:</span><span class="mi">100</span><span class="p">})</span> <span class="c1">#replace inf from div by 0 errors with 100</span>
 <span class="n">pa_eco_change</span> <span class="o">=</span> <span class="n">pa_eco_change</span><span class="o">.</span><span class="n">T</span> <span class="c1">#transpose dataframe back</span>
 
 <span class="n">pa_eco_change</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;D:/masters_project/analysis/output_tables/pa_eco_change.csv&#39;</span><span class="p">)</span> <span class="c1">#save to .csv</span>
@@ -15655,7 +15656,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -15706,7 +15707,7 @@ div#notebook {
       <td>0.000000</td>
       <td>-89.523810</td>
       <td>10.294118</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15729,7 +15730,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>-100.0</td>
       <td>0.0</td>
     </tr>
@@ -15739,7 +15740,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>-92.857143</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15750,8 +15751,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>inf</td>
-      <td>inf</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
       <td>-100.0</td>
       <td>0.0</td>
     </tr>
@@ -15761,7 +15762,7 @@ div#notebook {
       <td>-100.000000</td>
       <td>21.768707</td>
       <td>143.478261</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15783,7 +15784,7 @@ div#notebook {
       <td>-62.974939</td>
       <td>28.155340</td>
       <td>27.343750</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15814,8 +15815,8 @@ div#notebook {
       <th>chng_h370_Kyongnosla_AS</th>
       <td>-48.275862</td>
       <td>0.000000</td>
-      <td>inf</td>
-      <td>inf</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -15827,7 +15828,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>70.175439</td>
       <td>-100.0</td>
       <td>0.0</td>
@@ -15849,7 +15850,7 @@ div#notebook {
       <td>0.000000</td>
       <td>-53.030303</td>
       <td>124.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15860,8 +15861,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>-34.722222</td>
-      <td>inf</td>
-      <td>inf</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -15871,7 +15872,7 @@ div#notebook {
       <td>0.000000</td>
       <td>-62.809917</td>
       <td>200.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15904,8 +15905,8 @@ div#notebook {
       <td>0.000000</td>
       <td>-84.761905</td>
       <td>11.029412</td>
-      <td>inf</td>
-      <td>inf</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -15915,7 +15916,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>-69.090909</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>307.978723</td>
       <td>-100.0</td>
       <td>-100.0</td>
@@ -15927,7 +15928,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>-100.0</td>
       <td>0.0</td>
     </tr>
@@ -15937,7 +15938,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>-100.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15948,8 +15949,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>inf</td>
-      <td>inf</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
       <td>-100.0</td>
       <td>0.0</td>
     </tr>
@@ -15959,7 +15960,7 @@ div#notebook {
       <td>-100.000000</td>
       <td>57.142857</td>
       <td>162.318841</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -15981,7 +15982,7 @@ div#notebook {
       <td>-82.942603</td>
       <td>56.310680</td>
       <td>46.093750</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16012,7 +16013,7 @@ div#notebook {
       <th>chng_h585_Kyongnosla_AS</th>
       <td>-55.172414</td>
       <td>0.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -16036,7 +16037,7 @@ div#notebook {
       <td>0.000000</td>
       <td>-100.000000</td>
       <td>29.032258</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16048,7 +16049,7 @@ div#notebook {
       <td>-54.545455</td>
       <td>164.000000</td>
       <td>0.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16058,8 +16059,8 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>-45.833333</td>
-      <td>inf</td>
-      <td>inf</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16080,7 +16081,7 @@ div#notebook {
       <td>-100.000000</td>
       <td>-89.655172</td>
       <td>0.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16103,7 +16104,7 @@ div#notebook {
       <td>45.454545</td>
       <td>0.666667</td>
       <td>-80.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16113,7 +16114,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>1600.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>-20.187305</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16234,7 +16235,7 @@ div#notebook {
       <td>0.000000</td>
       <td>0.000000</td>
       <td>-29.824561</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -16246,7 +16247,7 @@ div#notebook {
       <td>-3.225806</td>
       <td>17.857143</td>
       <td>-100.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -16278,7 +16279,7 @@ div#notebook {
       <td>0.000000</td>
       <td>28.571429</td>
       <td>0.000000</td>
-      <td>inf</td>
+      <td>100.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>

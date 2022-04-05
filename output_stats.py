@@ -239,6 +239,7 @@ while i < 36: #loop for columns 18-35 (ssp370)
 
 pa_eco_change = count.drop(count.columns[0:54], axis=1) #drop count columns
 pa_eco_change = pa_eco_change.replace({np.nan:0}) #replace NaN from div by 0 errors with 0
+pa_eco_change = pa_eco_change.replace({np.inf:100}) #replace inf from div by 0 errors with 100
 pa_eco_change = pa_eco_change.T #transpose dataframe back
 
 pa_eco_change.to_csv('D:/masters_project/analysis/output_tables/pa_eco_change.csv') #save to .csv
