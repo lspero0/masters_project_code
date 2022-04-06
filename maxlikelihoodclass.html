@@ -13096,7 +13096,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Import arcpy modules, set workspace, adn enable overwrite</p>
+<p>Import arcpy modules, set workspace, and enable overwrite</p>
 
 </div>
 </div>
@@ -13130,7 +13130,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Run a loop to call the names of the climatic variable reasters and add them to their appropriate lists</p>
+<p>Run a loop to call the names of the climatic variable rasters and add them to their appropriate lists</p>
 
 </div>
 </div>
@@ -13179,7 +13179,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1"># loop classification, creation out outputs </span>
 <span class="n">mlc</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#empty list for gathering outputs</span>
-<span class="n">sig</span> <span class="o">=</span> <span class="s1">&#39;D:/masters_project/strat_model/isocluster2.gsg&#39;</span> <span class="c1">#eidt for signature pathway</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="s1">&#39;D:/masters_project/strat_model/isocluster2.gsg&#39;</span> <span class="c1">#edit for signature pathway</span>
 
 <span class="n">n</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">for</span> <span class="n">raster</span> <span class="ow">in</span> <span class="n">tseason</span><span class="p">:</span> <span class="c1">#MLClassify with 4 bands and signature file</span>
@@ -13206,7 +13206,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Convert the classified rasters into polygons. Attatch ecoregions to the polygon attributes using the strata gridcode as the index. Convert the polygons back into rasters, now with the ecoregion as the cell value.</p>
+<p>Convert the classified rasters into polygons. Attach ecoregions to the polygon attributes using the strata gridcode as the index. Convert the polygons back into rasters, now with the ecoregion as the cell value.</p>
 
 </div>
 </div>
@@ -13476,7 +13476,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Using a conditional statement, any holes in the mode raster resulting from ties in ecoregion classification will be filled with cell values  from the mean raster</p>
+<p>Using a conditional statement, any holes in the mode raster resulting from ties in ecoregion classification will be filled with cell values from the mean raster</p>
 
 </div>
 </div>

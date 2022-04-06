@@ -26,7 +26,7 @@ while i < 13: #for a total of 10 climate models
 
 # loop classification, creation out outputs 
 mlc = [] #empty list for gathering outputs
-sig = 'D:/masters_project/strat_model/isocluster2.gsg' #eidt for signature pathway
+sig = 'D:/masters_project/strat_model/isocluster2.gsg' #edit for signature pathway
 
 n=0
 for raster in tseason: #MLClassify with 4 bands and signature file
